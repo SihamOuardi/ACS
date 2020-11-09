@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>FIMEACS</display-name>
+  <servlet>
+    <servlet-name>Faces Servlet</servlet-name>
+    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>/faces/*</url-pattern>
+  </servlet-mapping>
+  
+  <context-param>
+    <param-name>javax.faces.PROJECT_STAGE</param-name>
+    <param-value>Development</param-value>
+  </context-param>
+  
+  <servlet>
+		<servlet-name>App Start Up</servlet-name>
+		<servlet-class>acs.tools.StartUp</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+  
+  <servlet>
+    <servlet-name>AuthenticationRequest</servlet-name>
+    <servlet-class>acs.control.AuthenticationRequest</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>AuthenticationRequest</servlet-name>
+    <url-pattern>/AuthenticationRequest</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ChallengeFlow</servlet-name>
+    <servlet-class>acs.control.ChallengeFlow</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>ChallengeFlow</servlet-name>
+    <url-pattern>/ChallengeFlow</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ThreeDSmethod</servlet-name>
+    <servlet-class>acs.control.ThreeDSmethod</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>ThreeDSmethod</servlet-name>
+    <url-pattern>/ThreeDSmethod</url-pattern>
+  </servlet-mapping>
+  
+    <servlet-mapping>
+    <servlet-name>ChallengeFlowSDK</servlet-name>
+    <url-pattern>/ChallengeFlowSDK</url-pattern>
+  </servlet-mapping>
+  
+   <servlet-mapping>
+    <servlet-name>AuthenticationRequestSDK</servlet-name>
+    <url-pattern>/AuthenticationRequestSDK</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+	<filter-name>SessionFilter</filter-name>
+	<filter-class>security.SessionFilter</filter-class>
+</filter>
+
+<filter-mapping>
+	<filter-name>SessionFilter</filter-name>
+	<url-pattern>/*</url-pattern>
+</filter-mapping>
+
+  <session-config>
+    <session-timeout>50</session-timeout>
+  </session-config>
+  
+<!--   <welcome-file-list> -->
+<!--     <welcome-file>/ChallengeFlow</welcome-file> -->
+<!--   </welcome-file-list> -->
+  
+<!--   <welcome-file-list> -->
+<!--     <welcome-file>pages/ACSAuth2.xhtml</welcome-file> -->
+<!--   </welcome-file-list> -->
+</web-app>

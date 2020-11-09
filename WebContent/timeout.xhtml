@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j" xmlns:p="http://primefaces.org/ui"
+	xmlns:rich="http://richfaces.org/rich">
+<h:head>
+
+</h:head>
+<!-- HASSAN: Setting default local to fr_FR because userLocale is null before login -->
+<!-- <f:view locale="#{userContext.userLocale}"> -->
+<f:view locale="fr_FR">
+	<h:body>
+		<!-- 		<div id="image" style="background: url(/EPS/images/back2.jpg) no-repeat; width: 100%; height: 645px; background-size: 100%;"> -->
+		<div id="content" style="white-space: nowrap;">
+			<div id="header">
+				<h1>
+
+				</h1>
+			</div>
+			<div id="darkbanner" class="banner320">
+				<h2>#{msg.Gen_sessionExpired}</h2>
+			</div>
+			<div id="darkbannerwrap"></div>
+			<fieldset class="form" style="border-color: white">
+				<br></br>
+				<p style="white-space: nowrap;">
+					Time out					
+				</p>
+				<div style="white-space: nowrap;"></div>
+			</fieldset>
+			<br></br>
+		</div>
+	</h:body>
+</f:view>
+</html>
+
+
